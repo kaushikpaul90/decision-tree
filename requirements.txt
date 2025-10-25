@@ -1,0 +1,13 @@
+# requirements.txt
+# Dependencies for the Decision Tree Cross-Validation Script
+
+# Core scientific computing library
+numpy
+# Data manipulation and analysis
+pandas
+# Machine learning library, containing Decision Trees and cross-validation tools
+scikit-learn
+# Plotting and visualization
+matplotlib
+# Statistical data visualization (used for box plots)
+seaborn
