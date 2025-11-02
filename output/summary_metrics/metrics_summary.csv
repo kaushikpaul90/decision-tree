@@ -1,3 +1,5 @@
+# Mean and Variance of Class-wise Metrics across 6 folds
+# Columns include Accuracy, Precision, Recall, and Specificity for each class
 ,Mean,Variance
 Accuracy,0.9266666666666666,0.0021866666666666658
 Iris-setosa_Precision,1.0,0.0

@@ -1,3 +1,5 @@
+# Predicted labels across all 6 folds
+# Columns: Sample_Index_in_Original_Dataset, Actual_Label, Predicted_Label, Fold
 Sample_Index_in_Original_Dataset,Actual_Label,Predicted_Label,Fold
 0,Iris-setosa,Iris-setosa,2
 1,Iris-setosa,Iris-setosa,5
