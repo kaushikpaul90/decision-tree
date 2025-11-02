@@ -1,0 +1,80 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# Node
+node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+env/
+venv/
+.venv/
+ENV/
+venv*/
+
+# Packaging / build
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+*.egg
+.eggs/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Test / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+nosetests.xml
+coverage.xml
+
+# Jupyter
+.ipynb_checkpoints
+
+# Data science artifacts (large generated files)
+data/
+datasets/
+models/
+checkpoints/
+logs/
+outputs/
+results/
+*.csv
+*.tsv
+*.parquet
+
+# Databases
+*.sqlite
+*.sqlite3
+
+# IDEs / editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Environment / secrets
+.env
+.env.*.local
+*.pem
+*.key
+*.crt
+
+# R
+.Rhistory
+.RData
+.Rproj.user

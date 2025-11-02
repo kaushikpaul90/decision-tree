@@ -70,11 +70,11 @@ def run_cross_validation(X, y, feature_names):
     Trains the Decision Tree, saves the visualization, calculates metrics, 
     and records all test set predictions.
     """
-    # Initialize Stratified K-Fold for stratified sampling (Assignment 1 requirement)
+    # Initialize Stratified K-Fold for stratified sampling (Requirement #1)
     skf = StratifiedKFold(n_splits=N_SPLITS, shuffle=True, random_state=SEED)
     
     fold_results = []
-    all_predictions = [] # Stores predictions for summary output (Assignment 3 requirement)
+    all_predictions = [] # Stores predictions for summary output (Requirement #3)
     
     # Create necessary output directories
     os.makedirs(TREE_DIR, exist_ok=True)
@@ -94,7 +94,7 @@ def run_cross_validation(X, y, feature_names):
         dt_classifier = DecisionTreeClassifier(random_state=SEED)
         dt_classifier.fit(X_train, y_train)
         
-        # Save Decision Tree Visualization (Assignment 2 requirement)
+        # Save Decision Tree Visualization (Requirement #3)
         plt.figure(figsize=(18, 12))
         plot_tree(dt_classifier, 
                   feature_names=feature_names, 
@@ -109,7 +109,7 @@ def run_cross_validation(X, y, feature_names):
         # 3. Predict the class labels of the instances in the test set
         y_pred = dt_classifier.predict(X_test)
         
-        # Record the predicted labels (Assignment 3 requirement)
+        # Record the predicted labels (Requirement #3)
         for idx, actual, predicted in zip(test_index, y_test.tolist(), y_pred):
             all_predictions.append({
                 'Sample_Index_in_Original_Dataset': idx,
@@ -118,10 +118,10 @@ def run_cross_validation(X, y, feature_names):
                 'Fold': fold
             })
 
-        # Compute Overall Accuracy (Assignment 3 metric)
+        # Compute Overall Accuracy (Requirement #3 metric)
         accuracy = accuracy_score(y_test, y_pred)
         
-        # Compute class-wise metrics (Precision, Recall, Specificity) (Assignment 3 metrics)
+        # Compute class-wise metrics (Precision, Recall, Specificity) (Requirement #3 metrics)
         cm = confusion_matrix(y_test, y_pred, labels=dt_classifier.classes_)
         fold_metrics = {'Fold': fold, 'Accuracy': accuracy}
         
@@ -167,7 +167,7 @@ def perform_analysis_and_plot(results_df, class_names):
     and generating the required box plots (Assignment 4b).
     """
     
-    # Calculate the mean and variance of each metric (Assignment 4b)
+    # Calculate the mean and variance of each metric (Requirement #4b)
     mean_metrics = results_df.drop('Fold', axis=1).mean().rename('Mean')
     variance_metrics = results_df.drop('Fold', axis=1).var().rename('Variance')
     analysis_df = pd.concat([mean_metrics, variance_metrics], axis=1)
@@ -181,7 +181,7 @@ def perform_analysis_and_plot(results_df, class_names):
     print("\n--- Mean and Variance of Performance Metrics (Assignment 4b) ---")
     print(analysis_df.to_string())
 
-    # Draw box plots for class-wise metrics (Assignment 4b)
+    # Draw box plots for class-wise metrics (Requirement #4b)
     os.makedirs(PLOT_DIR, exist_ok=True)
     
     # Prepare data for box plotting (long format required for Seaborn 'hue')
